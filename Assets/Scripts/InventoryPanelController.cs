@@ -101,11 +101,11 @@ public class InventoryPanelController : MonoBehaviour
         {
             items[previousIndex].SetActive(false);
             items[previousIndex].transform.SetParent(itemPool.transform, false);
-            items[previousIndex].transform.localPosition = items[previousIndex].transform.localPosition - new Vector3(0.5026f, -1.7100389f, 2.703206f);
+            items[previousIndex].transform.localPosition = items[previousIndex].transform.localPosition - new Vector3(0.502507f, -2.7100389f, 2.703206f);
         }
         items[itemIndex].SetActive(true);
         items[itemIndex].transform.SetParent(playerCamera.transform, false);
-        items[itemIndex].transform.localPosition = items[itemIndex].transform.localPosition + new Vector3(0.5026f, -1.7100389f, 2.703206f);
+        items[itemIndex].transform.localPosition = items[itemIndex].transform.localPosition + new Vector3(0.502507f, -2.7100389f, 2.703206f);
         previousIndex = itemIndex;
         panel.SetActive(false);
     }
