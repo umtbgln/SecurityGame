@@ -76,7 +76,9 @@ GameObject:
   - component: {fileID: 1261940930750176401}
   - component: {fileID: 5292213785372189441}
   - component: {fileID: 829801903259213530}
-  - component: {fileID: 8737937113075685184}
+  - component: {fileID: 6277678645153009041}
+  - component: {fileID: 5250945013998357540}
+  - component: {fileID: 6413496593399099800}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -200,7 +202,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8737937113075685184
+--- !u!114 &6277678645153009041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,9 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaBar: {fileID: 0}
-  orientation: {fileID: 2532874624731032865}
-  groundCheck: {fileID: 5661866381598820655}
-  camHolder: {fileID: 6967474165058196887}
+  orientation: {fileID: 0}
+  groundCheck: {fileID: 0}
+  camHolder: {fileID: 0}
   moveSpeed: 5
   jumpForce: 7
   groundDrag: 5
@@ -223,12 +225,45 @@ MonoBehaviour:
   crouchCamY: -0.25
   standCamY: 0
   runSpeed: 10
-  slowdownSpeed: 3
+  slowdownSpeed: 1
   speedRegenRate: 0.5
   stamina: 100
   maxStamina: 100
   staminaDecreaseRate: 20
   staminaRegenRate: 10
+--- !u!114 &5250945013998357540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602118332498210456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b81f7c7bed2a40438f1dd2ce1575f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 1
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  npcLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &6413496593399099800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602118332498210456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a472c60a6f1f514a97124f7130dae91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthSlider: {fileID: 0}
 --- !u!1 &3162121152987572839
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,8 +307,8 @@ GameObject:
   - component: {fileID: 6425266684432126706}
   - component: {fileID: 6128357857335852018}
   - component: {fileID: 8557160376963171630}
-  - component: {fileID: 6711244417646310592}
   - component: {fileID: 378107235165594234}
+  - component: {fileID: 3864231180667142420}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -399,21 +434,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &6711244417646310592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3428599503842431853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd79866998d6c9f4fba57fece18f3b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 0}
-  sensitivity: 100
-  player: {fileID: 1646204155286970337}
 --- !u!114 &378107235165594234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,3 +450,18 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &3864231180667142420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428599503842431853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd79866998d6c9f4fba57fece18f3b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 0}
+  sensitivity: 100
+  player: {fileID: 1646204155286970337}
