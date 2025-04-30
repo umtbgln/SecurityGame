@@ -63,26 +63,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 StandUp();
             }
-
-            if (Input.GetKey(KeyCode.F) && stamina > 0f)
-            {
-                Run();
-            }
-            else
-            {
-                if (stamina == 0f)
-                {
-                    Invoke(nameof(StoreStamina), 5f); // Stamina tamamen bittikten sonra tekrar dolmaya baþlarken koþmaya baþladýðýmýzda stamina hem dolmaya çalýþýyor hem boþalmaya çalýþýyor. Çünkü "Invoke" kullanýyoruz.
-                    moveSpeed = slowdownSpeed;
-                }
-                else
-                    StoreStamina();
-            }
-
-            if (Input.GetKeyUp(KeyCode.F))
-            {
-                moveSpeed = 5f;
-            }
         }
         else
             rb.drag = 0f;
@@ -90,6 +70,26 @@ public class PlayerMovement : MonoBehaviour
         if (moveSpeed < 5f)
         {
             SlowDown();
+        }
+
+        if (Input.GetKey(KeyCode.F) && stamina > 0f)
+        {
+            Run();
+        }
+        else
+        {
+            if (stamina == 0f)
+            {
+                Invoke(nameof(StoreStamina), 5f); // Stamina tamamen bittikten sonra tekrar dolmaya baþlarken koþmaya baþladýðýmýzda stamina hem dolmaya çalýþýyor hem boþalmaya çalýþýyor. Çünkü "Invoke" kullanýyoruz.
+                moveSpeed = slowdownSpeed;
+            }
+            else
+                StoreStamina();
+        }
+
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            moveSpeed = 5f;
         }
 
         staminaBar.value = stamina / maxStamina;
